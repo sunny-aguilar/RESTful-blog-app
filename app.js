@@ -13,6 +13,11 @@ mongoose.connect('mongodb://localhost/restful_blog_app', {
     useUnifiedTopology: true
 });
 
+// setup EJS engine
+app.use('view engine', ejs);
+
+
+
 // map routes
 app.get('/', function(req, res) {
     res.send('RESTful Web App');
