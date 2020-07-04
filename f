@@ -8,7 +8,7 @@
 function push_commit()
 {
     #commit changes
-    git commit -am 'yelp camp'
+    git commit -am 'RESTful app'
     # push to github
     git push
 }
@@ -16,7 +16,7 @@ function push_commit()
 function commit()
 {
     # commt changes only
-    git commit -am 'yelp camp'
+    git commit -am 'RESTful app'
 }
 
 # what to run
