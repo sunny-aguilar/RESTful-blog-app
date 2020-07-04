@@ -118,8 +118,15 @@ app.put('/blogs/:id', function(req, res) {
 });
 
 /* DELETE route */
-app.delete('/blog/:id', function(req, res) {
-    res.send('DESTROYED!');
+app.delete('/blogs/:id', function(req, res) {
+    Blog.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.redirect('/blogs');
+        }
+        else {
+            res.redirect('/blogs');
+        }
+    });
 });
 
 
