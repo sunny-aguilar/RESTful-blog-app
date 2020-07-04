@@ -23,15 +23,19 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 // mongoDB Schema/Model config
-const blogSchema = new.mongoose.Schema({
+const blogSchema = new mongoose.Schema({
     title: String,
     image: String,
     body: String,
     created: {type: Date, default: Date.now}
 });
+const blog = mongoose.model('blogSchema');
 
-const blog = mongoose.model('blogSchema ');
-
+// blog.create({
+//     title: 'Test post',
+//     image: 'https://www.webnode.com/blog/wp-content/uploads/2019/04/blog2.png',
+//     body: 'Nostrud quis nisi laborum ullamco commodo consectetur duis esse ex laborum. Pariatur cillum laborum elit consectetur. Elit commodo tempor et in tempor do non eu dolor Lorem tempor reprehenderit.'
+// });
 
 
 // RESTFUL ROUTES
