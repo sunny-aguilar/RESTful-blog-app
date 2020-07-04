@@ -3,6 +3,7 @@
 // npm modules
 const bodyParser    = require('body-parser'),
 methodOverride      = require('method-override'),
+expressSanitizer    = require('express-sanitizer'),
 mongoose            = require('mongoose'),
 express             = require('express'),
 app                 = express();
@@ -25,6 +26,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // use method-override for PUT requests
 app.use(methodOverride('_method'));
+
+// use form sanitizer
+app.use(expressSanitizer());
+
 
 
 // mongoDB Schema/Model config
@@ -66,9 +71,13 @@ app.get('/blogs/new', function(req, res) {
     res.render('new');
 });
 
-/* new POST route */
+/* new POST/CREATE route */
 app.post('/blogs', function(req, res) {
     // create blog
+    console.log(req.body);
+    req.body.blog.body = req.sanitize(req.body.blog.body);
+    console.log('---------------');
+    console.log(req.body);
     Blog.create(req.body.blog, function(err, newBlog) {
         if (err) {
             res.render('new');
