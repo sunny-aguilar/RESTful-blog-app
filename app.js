@@ -39,7 +39,7 @@ const Blog = mongoose.model('blog', blogSchema);
 
 
 // RESTFUL ROUTES
-app.get('/', function() {
+app.get('/', function(req, res) {
     res.send('Index page');
 });
 
