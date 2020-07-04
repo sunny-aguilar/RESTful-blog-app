@@ -29,7 +29,7 @@ const blogSchema = new mongoose.Schema({
     body: String,
     created: {type: Date, default: Date.now}
 });
-const blog = mongoose.model('blogSchema');
+const Blog = mongoose.model('blogSchema');
 
 // blog.create({
 //     title: 'Test post',
