@@ -73,11 +73,13 @@ app.get('/blogs/new', function(req, res) {
 
 /* new POST/CREATE route */
 app.post('/blogs', function(req, res) {
-    // create blog
+    // sanitize user data
     console.log(req.body);
     req.body.blog.body = req.sanitize(req.body.blog.body);
     console.log('---------------');
     console.log(req.body);
+
+    // create blog
     Blog.create(req.body.blog, function(err, newBlog) {
         if (err) {
             res.render('new');
@@ -116,6 +118,10 @@ app.get('/blogs/:id/edit', function(req, res) {
 
 /* update/PUT route */
 app.put('/blogs/:id', function(req, res) {
+    // sanitize user data
+    req.body.blog.body = req.sanitize(req.body.blog.body);
+
+    // update post
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updateBlog) {
         if (err) {
             res.redirect('/blogs');
