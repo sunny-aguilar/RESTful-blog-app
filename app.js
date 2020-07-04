@@ -34,7 +34,7 @@ const blog = mongoose.model('blogSchema ');
 
 
 
-// map routes
+// RESTFUL ROUTES
 app.get('/', function(req, res) {
     res.send('RESTful Web App');
 });
