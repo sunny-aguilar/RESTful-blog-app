@@ -75,6 +75,24 @@ app.post('/blogs', function(req, res) {
     // redirect
 });
 
+/* show ruote */
+app.get('/blogs/:id', function(req, res) {
+    Blog.findById(req.params.id, function(err, showBlog) {
+        if (err) {
+            res.redirect('/blogs');
+        }
+        else {
+            res.render('show', {blog: showBlog});
+        }
+    });
+});
+
+/* edit route */
+app.get('/blogs/:id/edit', function(req, res) {
+    res.render('edit');
+});
+
+/* destroy route */
 
 
 // start server
