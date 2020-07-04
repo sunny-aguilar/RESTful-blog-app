@@ -22,7 +22,7 @@ app.use(express.static('public'));
 // use body parser
 app.use(bodyParser.urlencoded({extended: true}));
 
-// mongoDB Schema
+// mongoDB Schema/Model config
 const blogSchema = new.mongoose.Schema({
     title: String,
     image: String,
@@ -30,6 +30,7 @@ const blogSchema = new.mongoose.Schema({
     created: {type: Date, default: Date.now}
 });
 
+const blog = mongoose.model('blogSchema ');
 
 
 
