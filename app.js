@@ -44,8 +44,14 @@ app.get('/', function(req, res) {
 });
 
 app.get('/blogs', function(req, res) {
-    Blog.find({});
-    res.render('index');
+    Blog.find({}, function(err, blogs) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.render('index');
+        }
+    });
 });
 
 
