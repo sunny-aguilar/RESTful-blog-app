@@ -1,1 +1,1 @@
-# RESTful-blog-app
+# RESTful Blog App
