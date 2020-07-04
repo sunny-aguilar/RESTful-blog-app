@@ -9,7 +9,6 @@ app                 = express();
 
 // connect to MongoDB
 mongoose.connect('mongodb://localhost/restful_blog_app', {
-    //
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
