@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/restful_blog_app', {
 });
 
 // setup EJS engine
-app.set('view engine', ejs);
+app.set('view engine', 'ejs');
 
 
 
