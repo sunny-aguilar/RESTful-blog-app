@@ -31,7 +31,7 @@ const blogSchema = new mongoose.Schema({
 });
 const Blog = mongoose.model('blogSchema', blogSchema);
 
-blog.create({
+Blog.create({
     title: 'Test post',
     image: 'https://www.webnode.com/blog/wp-content/uploads/2019/04/blog2.png',
     body: 'Nostrud quis nisi laborum ullamco commodo consectetur duis esse ex laborum. Pariatur cillum laborum elit consectetur. Elit commodo tempor et in tempor do non eu dolor Lorem tempor reprehenderit.'
