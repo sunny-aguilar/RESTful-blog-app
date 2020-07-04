@@ -22,6 +22,17 @@ app.use(express.static('public'));
 // use body parser
 app.use(bodyParser.urlencoded({extended: true}));
 
+// mongoDB Schema
+const blogSchema = new.mongoose.Schema({
+    title: String,
+    image: String,
+    body: String,
+    created: {type: Date, default: Date.now}
+});
+
+
+
+
 // map routes
 app.get('/', function(req, res) {
     res.send('RESTful Web App');
