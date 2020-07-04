@@ -43,6 +43,8 @@ app.get('/', function(req, res) {
     res.redirect('blogs');
 });
 
+
+/* index route */
 app.get('/blogs', function(req, res) {
     Blog.find({}, function(err, blogs) {
         if (err) {
@@ -54,7 +56,10 @@ app.get('/blogs', function(req, res) {
     });
 });
 
-
+/* new route */
+app.get('/blogs/new', function(req, res) {
+    res.render('new');
+});
 
 // start server
 const port = 1776;
