@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // use body parser
-app.use();
+app.use(bodyParser.urlencoded({extended: true}));
 
 // map routes
 app.get('/', function(req, res) {
