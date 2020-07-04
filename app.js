@@ -1,7 +1,9 @@
 // RESTful Web App
 
-const express = require('express');
-const app = express();
+const express = require('express'),
+app = express(),
+bodyParser = require('body-parser'),
+mongoose = require('mongoose');
 
 
 // map routes
