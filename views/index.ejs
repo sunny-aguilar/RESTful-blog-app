@@ -2,16 +2,22 @@
 <!-- header file -->
 <%- include('partials/header') %>
 
-<h1>Index page</h1>
-<% blogs.forEach(function (blog) { %>
-    <div>
-        <h2><%= blog.title %></h2>
-        <img src='<%= blog.image %>'>
-        <span><%= blog.created %></span>
-        <p><%= blog.body.substring(0, 100) %>...</p>
-        <a href='/blogs/<%= blog._id %>'>Read More</a>
+<div class="ui main text container">
+    <div class="ui huge header">
+        RESTful Blog App
     </div>
-<% }); %>
+    <h1>Index page</h1>
+    <% blogs.forEach(function (blog) { %>
+        <div>
+            <h2><%= blog.title %></h2>
+            <img src='<%= blog.image %>'>
+            <span><%= blog.created %></span>
+            <p><%= blog.body.substring(0, 100) %>...</p>
+            <a href='/blogs/<%= blog._id %>'>Read More</a>
+        </div>
+    <% }); %>
+</div>
+
 
 <!-- footer file -->
 <%- include('partials/footer') %>
