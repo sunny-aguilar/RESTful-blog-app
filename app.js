@@ -1,4 +1,5 @@
 // RESTful Web App
+// Author: Sandro Aguilar
 
 // npm modules
 const bodyParser    = require('body-parser'),
